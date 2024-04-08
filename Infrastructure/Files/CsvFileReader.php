@@ -1,21 +1,16 @@
 <?php
 
-namespace Files;
+namespace Infrastructure\Files;
 
-require_once 'Application\Interfaces\Files\ICsvFileReader.php';
-require_once 'Infrastructure\Utils\CsvUtils.php';
-
-
+use Application\Interfaces\Files\ICsvFileReader;
 use Exception;
-use Interfaces\Files\ICsvFileReader;
-
+use Infrastructure\Utils\CsvUtils;
 
 /**
  * Class for working with csv files.
  */
-class CsvFileReader implements ICsvFileReader {
-
-
+class CsvFileReader implements ICsvFileReader
+{
     /**
      * @throws Exception
      */
@@ -23,12 +18,13 @@ class CsvFileReader implements ICsvFileReader {
         string $fileName,
         string $separator = ",",
         int    $skipRows = 0,
-        int    $lineLength = 1000): array {
+        int    $lineLength = 1000): array
+    {
 
         $file = $this->open_file($fileName);
         $header = fgetcsv($file, $lineLength, $separator);
 
-        \CsvUtils::skipRows($file, $skipRows, $lineLength);
+        CsvUtils::skipRows($file, $skipRows, $lineLength);
 
         $result = array();
 
@@ -49,7 +45,8 @@ class CsvFileReader implements ICsvFileReader {
      * @return resource
      * @throws Exception
      */
-    private function open_file(string $fileName) {
+    private function open_file(string $fileName)
+    {
         $fileHandle = fopen($fileName, "r");
         if (!$fileHandle) {
             throw new Exception("Could not read file: " . $fileName);

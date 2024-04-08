@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces\Persistence\Repositories;
+namespace Application\Interfaces\Persistence\Repositories;
 
 
 use Domain\Entities\Person;

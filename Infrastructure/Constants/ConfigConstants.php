@@ -1,6 +1,6 @@
 <?php
 
-namespace Constants;
+namespace Infrastructure\Constants;
 
 /**
  *
