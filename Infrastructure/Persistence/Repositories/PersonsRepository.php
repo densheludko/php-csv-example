@@ -1,21 +1,18 @@
 <?php
 
-namespace Persistence\Repositories;
+namespace Infrastructure\Persistence\Repositories;
 
-require_once "Domain\Entities\Person.php";
-require_once "Application\Interfaces\Persistence\IConnectionFactory.php";
-require_once "Application\Interfaces\Persistence\Repositories\IPersonsRepository.php";
-
+use Application\Interfaces\Persistence\IConnectionFactory;
+use Application\Interfaces\Persistence\Repositories\IPersonsRepository;
 use Domain\Entities\Person;
 use Exception;
-use Interfaces\Persistence\IConnectionFactory;
-use Interfaces\Persistence\Repositories\IPersonsRepository;
 use PDO;
 
 /**
  *
  */
-class PersonsRepository implements IPersonsRepository {
+class PersonsRepository implements IPersonsRepository
+{
     private static $BATCH_SIZE = 10;
 
     /**
@@ -27,7 +24,8 @@ class PersonsRepository implements IPersonsRepository {
      * @param IConnectionFactory $connectionFactory
      * @throws Exception
      */
-    public function __construct(IConnectionFactory $connectionFactory) {
+    public function __construct(IConnectionFactory $connectionFactory)
+    {
         $this->pdo = $connectionFactory->create();
     }
 
@@ -36,7 +34,8 @@ class PersonsRepository implements IPersonsRepository {
      * @return int
      * @throws Exception
      */
-    public function addRange(array $persons): int {
+    public function addRange(array $persons): int
+    {
         $result = 0;
         $personsCount = count($persons);
 

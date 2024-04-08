@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces\Files;
+namespace Application\Interfaces\Files;
 
 use Exception;
 

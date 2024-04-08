@@ -1,24 +1,18 @@
 <?php
 
-require_once "Infrastructure\Files\CsvFileReader.php";
-require_once "Application\Services\PersonsService.php";
-require_once "Infrastructure\Configuration\Configuration.php";
-require_once "Infrastructure\Persistence\ConnectionFactory.php";
-require_once "Infrastructure\Persistence\Repositories\PersonsRepository.php";
-require_once "Infrastructure\Persistence\Repositories\PersonsRepository.php";
+namespace Application;
 
-
-use Configuration\Configuration;
-use Files\CsvFileReader;
-use Interfaces\Configuration\IConfiguration;
-use Interfaces\Files\ICsvFileReader;
-use Interfaces\Persistence\IConnectionFactory;
-use Interfaces\Persistence\Repositories\IPersonsRepository;
-use Interfaces\Services\IPersonsService;
-use Persistence\ConnectionFactory;
-use Persistence\Repositories\PersonsRepository;
-use Services\PersonsService;
-
+use Application\Interfaces\Configuration\IConfiguration;
+use Application\Interfaces\Files\ICsvFileReader;
+use Application\Interfaces\Persistence\IConnectionFactory;
+use Application\Interfaces\Persistence\Repositories\IPersonsRepository;
+use Application\Interfaces\Services\IPersonsService;
+use Application\Services\PersonsService;
+use Infrastructure\Configuration\Configuration;
+use Exception;
+use Infrastructure\Files\CsvFileReader;
+use Infrastructure\Persistence\ConnectionFactory;
+use Infrastructure\Persistence\Repositories\PersonsRepository;
 
 /**
  * Simple service provider. But it's better to use a normal DI !!!.
@@ -57,7 +51,7 @@ class ServiceProvider {
      * @param string $serviceName
      * @return object|null
      */
-    public function get(string $serviceName): ?object {
+    public function get(string $serviceName) {
         $service = $this->serviceCollection[$serviceName];
         if ($service) {
             return $service($this);

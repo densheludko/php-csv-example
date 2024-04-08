@@ -1,11 +1,8 @@
 <?php
 
-namespace Configuration;
+namespace Infrastructure\Configuration;
 
-use Interfaces\Configuration\IConfiguration;
-
-require_once "Application\Interfaces\Configuration\IConfiguration.php";
-
+use Application\Interfaces\Configuration\IConfiguration;
 
 /**
  * Main application config.

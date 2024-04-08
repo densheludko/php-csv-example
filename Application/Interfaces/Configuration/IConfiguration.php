@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces\Configuration;
+namespace Application\Interfaces\Configuration;
 
 /**
  *
@@ -11,5 +11,4 @@ interface IConfiguration {
      * @return mixed
      */
     public function get(string $key);
-
 }

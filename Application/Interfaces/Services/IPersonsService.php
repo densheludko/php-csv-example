@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces\Services;
+namespace Application\Interfaces\Services;
 
 interface IPersonsService {
     /**

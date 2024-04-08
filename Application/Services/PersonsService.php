@@ -1,15 +1,12 @@
 <?php
 
-namespace Services;
+namespace Application\Services;
 
-require_once "Application\Interfaces\Services\IPersonsService.php";
-require_once "Application\Mappers\Persons\ObjectToPersonMapper.php";
-
+use Application\Interfaces\Files\ICsvFileReader;
+use Application\Interfaces\Persistence\Repositories\IPersonsRepository;
+use Application\Interfaces\Services\IPersonsService;
+use Application\Mappers\Persons\ObjectToPersonMapper;
 use Exception;
-use Interfaces\Files\ICsvFileReader;
-use Interfaces\Persistence\Repositories\IPersonsRepository;
-use Interfaces\Services\IPersonsService;
-use Mappers\Persons\ObjectToPersonMapper;
 
 /**
  *

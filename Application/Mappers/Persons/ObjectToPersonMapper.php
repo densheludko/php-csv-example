@@ -1,6 +1,6 @@
 <?php
 
-namespace Mappers\Persons;
+namespace Application\Mappers\Persons;
 
 use Domain\Entities\Person;
 

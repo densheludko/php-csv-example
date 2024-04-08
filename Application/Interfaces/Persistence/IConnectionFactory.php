@@ -1,6 +1,6 @@
 <?php
 
-namespace Interfaces\Persistence;
+namespace Application\Interfaces\Persistence;
 
 
 use Exception;
